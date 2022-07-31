@@ -14,8 +14,8 @@ First user sign up if he does not have an account then he can sign in
 ### an intercepor used to set the authorization link in headers and to  handle errors
 ### an interceptor used to create loader that is shown when hitting any api
 ### a guard is used to prevent navigation by writting routes in beside localhost/4200
-### one thing which make code clean and undestood is using module for every set of components related to each other
-### using shared component was one of the things that achieved dry principle
+##### one thing which make code clean and undestood is using module for every set of components related to each other
+##### using shared component was one of the things that achieved dry principle
 
 
 
