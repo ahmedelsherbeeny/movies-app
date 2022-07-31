@@ -1,0 +1,21 @@
+
+
+<mat-form-field  appearance="fill" fxFlex>
+    <mat-label >{{title}}</mat-label>
+    <mat-select matInput [formControl]="selected"  (selectionChange)="detectChanges($event.value)">
+        <mat-option value="selected">{{value}}</mat-option>
+
+
+        <mat-option value="all" *ngFor="let option of data.message" [value]="option">{{option.id}}</mat-option>
+       
+
+    </mat-select>
+   
+    
+   
+
+</mat-form-field>
+
+
+    
+    

@@ -1,0 +1,37 @@
+
+<div class="loader-container" *ngIf="loading$ | async ">
+    <mat-spinner style="top: 20%; left: 50%;"></mat-spinner>
+ 
+
+
+
+</div>
+
+
+
+
+<mat-toolbar class="header">
+<mat-toolbar-row  >
+   
+<div class="logo" >
+    
+    <a href="#" class="logo" >
+        <mat-icon>storefront</mat-icon> Movies App
+      </a>
+
+</div>
+<div class="register-login">
+    <a  class="navlink" (click)="signupAction()" *ngIf="router.url== '/'" >Register</a>
+    <a  class="navlink" (click)="loginAction()" *ngIf="router.url== '/'">Log In</a>
+    <a  class="navlink" (click)="addMovie()" *ngIf="router.url== '/allmovies'">Add Movie</a>
+    <a  class="navlink" (click)="logOut()" *ngIf="router.url== '/allmovies'">Log out</a>
+
+
+    
+
+
+</div>
+
+</mat-toolbar-row>
+
+</mat-toolbar>

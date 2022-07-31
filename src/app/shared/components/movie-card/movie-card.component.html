@@ -1,0 +1,32 @@
+<div class="card">
+
+    <img [src]="data.image" class="card-img-top">
+    <div class="card-body">
+        <h2 class="card-title">{{data.name}}</h2>
+
+        <h2 class="card-title">{{data.description}}</h2>
+        <div class="dates">
+            <h4 class="date">Created at: {{data.created_at | date:"shortDate"}}</h4>
+
+            <h4 class="date">updated_at: {{data.updated_at | date:"shortDate"}}</h4>
+
+            <h3>Category_Id: {{data.category_id}}</h3>
+
+
+        </div>
+        <div class="actions">
+            
+            <button class="actionone btn btn-primary" routerLink="/allmovies"             [class.active]="movieID==data ? data.id:0"
+            [queryParams]="{movieID : data ? data.id :1}" (click)="edit(data.id)">Edit</button>
+            <button class="actiontwo btn btn-danger" (click)="deleteMovie(data.id)">Delete</button>
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+</div>

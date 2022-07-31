@@ -1,0 +1,45 @@
+
+<div class="row">
+    <div class=" col-sm-3 col-md-1 ">
+
+
+
+        <mat-form-field  appearance="fill" fxFlex>
+            <mat-label >Categories</mat-label>
+            <mat-select matInput [formControl]="selected"  (selectionChange)="filterMovies($event)">
+                <mat-option value="All">All</mat-option>
+        
+        
+                <mat-option value="all" *ngFor="let option of categories.message" [value]="option">{{option.name}}</mat-option>
+               
+        
+            </mat-select>
+           
+            
+           
+        
+        </mat-form-field>
+        
+    </div>
+    <div class="col-2 ">
+
+
+        
+    </div>
+    <div class="  col-6 justify-content-start ">
+        <div class="row">
+
+            
+            
+            <div class="col-sm-12 col-md-4" *ngFor="let movie of movies.message" >
+                <app-movie-card [data]="movie"></app-movie-card>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>

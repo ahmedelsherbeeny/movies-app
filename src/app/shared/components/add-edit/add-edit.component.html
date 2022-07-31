@@ -1,0 +1,57 @@
+
+<div class="container">
+    <h1 *ngIf="isAddMode">Add Movie</h1>
+<h1 *ngIf="!isAddMode">Edit Movie</h1>
+<form class="example-form" [formGroup]="formData"   >
+
+    <div class="row">
+
+        <mat-form-field class=" col-md-4 col-sm-12" >
+            <mat-label>{{data.field2}}</mat-label>
+            <input matInput placeholder="Ex. Ahmed" value="Ahmed" formControlName="name">
+    
+        </mat-form-field>
+        <mat-form-field class=" col-md-4 col-sm-12">
+            <mat-label>{{data.field3}}</mat-label>
+            <input matInput placeholder="Ex. 50" value="50" formControlName="description">
+    
+        </mat-form-field>
+    <div class="col-md-4 col-sm-12">
+        <label for="image">{{data.field4}}</label>
+        <img src="{{base64}}" alt="">
+        <input  type="file" class="form-control" (change)="getImagePath($event)"  >
+    
+    </div>
+           
+    
+        <div class=" col-md-4 col-sm-7 mt-5">
+            <app-filtering [title]="'category'" [value]="categoryID" [data]="categories" (filterData)="getSelectedCategoryId($event)" ></app-filtering>
+    
+    
+        </div>
+    
+        <div  class="d-flex justify-content-center">
+    
+            <button  color="warn" mat-dialog-close (click)="navigateback()">Cancel</button>
+            <button  color="primary"  type="submit"
+                (click)="createMovie()" *ngIf="isAddMode">Add Movie</button>
+                <button  color="primary"  type="submit"
+                (click)="updateMovie()" *ngIf="!isAddMode">Update Movie</button>
+    
+        </div>
+
+    </div>
+
+
+
+    
+
+   
+
+
+</form>
+
+</div>
+
+
+
